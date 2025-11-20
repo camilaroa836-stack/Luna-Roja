@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensaje de la Luna Roja</title>
+  <style>
+    body {
+      font-family: "Lucida Console", sans-serif;
+      background: url('https://pixil.nyc3.digitaloceanspaces.com/images/art/pending/299771.gif') no-repeat center center fixed;
+      background-size: cover;
+      image-rendering: pixelated;
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 0, 70, 0.4);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #cd0f24;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #ff6699;
+      transform: scale(1.05);
+    }
+
+    #btnAudio {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .error {
+      color: #ff8080;
+      margin-top: 10px;
+      display: none;
+    }
+
+    h2 {
+      color: #ffd6e0;
+      text-shadow: 0 0 8px rgba(255, 0, 80, 0.5);
+    }
+
+    p {
+      color: #ffe6f0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Luna Roja</h2>
+    <p>Introduce El audio está cifrado;La pista es.</p>
+    <input type="password" id="pwd" placeholder="Contraseña">
+    <button onclick="verificar()">Enviar</button>
+    <p class="note">El audio está cifrado;La pista es: <b>Las cartas tienen muchas formas de interpretarse y tu ya tienes tu nombre solo falta...</b></p>
+  </div>
+    <div class="error" id="errorMsg">Contraseña incorrecta. Intenta otra vez.</div>
+    <div id="btnAudio">
+      <button onclick="escuchar()">Escuchar mensaje</button>
+    </div>
+  </div>
+
+  <script>
+    function verificar() {
+      const pwd = document.getElementById('pwd').value;
+      const errorMsg = document.getElementById('errorMsg');
+      const btnAudio = document.getElementById('btnAudio');
+      
+       if (pwd === "Reino de Ylvera") {
+        errorMsg.style.display = 'none';
+        btnAudio.style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+        btnAudio.style.display = 'none';
+      }
+    }
+
+    function escuchar() {
+
+      // AUDIO FINAL CORRECTO (Dropbox con raw=1)
+      const enlace = 'https://drive.google.com/file/d/1gwVBgoX6gy8FstyUoUoAliwNy-o_agE1/view?usp=sharing';
+
+      window.open(enlace, '_blank');
+    }
+  </script>
+</body>
+</html>
+
